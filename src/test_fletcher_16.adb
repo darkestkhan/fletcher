@@ -41,7 +41,8 @@ begin
 
   for E of Test_Vector loop
     declare
-      Sum: constant  Fletcher_16.Fletcher_16_Sum := Compute_Fletcher_16_Sum (To_String (E.Input));
+      Input : aliased constant String := To_String (E.Input);
+      Sum: constant  Fletcher_16.Fletcher_16_Sum := Compute_Fletcher_16_Sum (Input);
     begin
       if Sum /= E.Output then
         Ada.Text_IO.Put_Line ("Mismatch between expected and actual result");

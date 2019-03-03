@@ -9,7 +9,7 @@ project Test_Fletcher is
   for Main use ("test_fletcher_16.adb");
 
   package Compiler is
-    CPU   := external ("CPU", "");
+    CPU   := external ("CPU", "-m64");
     OPT   := ("-O3", "-fomit-frame-pointer");
     WARN  := ("-Wall");
     STYLE := ("-gnaty2aAbdefhiklM100nOprSux");

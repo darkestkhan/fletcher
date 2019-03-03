@@ -23,7 +23,7 @@ package body Fletcher_16 is
 
   type Byte_Array is array (Natural range <>) of Byte;
 
-  function Compute_Fletcher_16_Sum_G (Input : T) return Fletcher_16_Sum is
+  function Compute_Fletcher_16_Sum_G (Input : aliased T) return Fletcher_16_Sum is
 
     -- Potentially dangerous. 'Address may point to register which may make
     -- results "unpredictable"

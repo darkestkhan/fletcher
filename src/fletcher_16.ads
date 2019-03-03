@@ -25,7 +25,7 @@ package Fletcher_16 is
 
   generic
     type T (<>) is limited private;
-  function Compute_Fletcher_16_Sum_G (Input : T) return Fletcher_16_Sum
+  function Compute_Fletcher_16_Sum_G (Input : aliased T) return Fletcher_16_Sum
   with Pre => Input'Size mod 8 = 0;
 
 end Fletcher_16;

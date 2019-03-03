@@ -15,7 +15,7 @@ project Fletcher is
   for Library_Version use "lib" & Name & ".so." & Version;
 
   package Compiler is
-    CPU   := external ("CPU", "");
+    CPU   := external ("CPU", "-m64");
     OPT   := ("-O3", "-fomit-frame-pointer");
     WARN  := ("-Wall");
     STYLE := ("-gnaty2aAbdefhiklM80nOprSux");
